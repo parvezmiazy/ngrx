@@ -13,13 +13,13 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
-//   getUsers():Observable<IUser[]>{
-//     this.http.get<IUser[]>(this.apiUrl)
-//     .pipe(
-//           tap(data=>console.log('all:' + JSON.stringify(data))),
-//           catchError(this.handleError)
-//          );
-// }
+  getUsers():Observable<IUser[]>{
+    this.http.get<IUser[]>(this.apiUrl)
+    .pipe(
+          tap(data=>console.log('all:' + JSON.stringify(data))),
+          catchError(this.handleError)
+         );
+}
 
   private handleError(err: HttpErrorResponse) {
     let errorMessage = '';
