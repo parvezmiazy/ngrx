@@ -26,15 +26,19 @@ export class UserComponent implements OnInit {
     this.store.pipe(select(fromUser.getUsers)).subscribe(
       
         users =>{
+          
           this.users = users;
         }
+
+        
       
     );
 
     this.store.pipe(select(fromUser.getError)).subscribe(
       
-      users =>{
+      err =>{
         this.errorMessage = err;
+        ;
       }
     
   );

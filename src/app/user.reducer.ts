@@ -13,16 +13,7 @@ export interface State {
 
 export const initialState: State = {
 
-  users:[
-    {
-      "name":"abc",
-      "gender":"Male",
-      "company":"simec systems",
-      "email":"simec@gmail.com",
-      "age":26,
-      "status":1
-    }
-  ],
+  users:[],
   error:''
 
 };

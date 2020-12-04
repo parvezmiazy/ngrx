@@ -11,11 +11,13 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { UserEffects } from './user.effects';
 import { UserComponent } from './user/user.component';
+import { AddUserComponent } from './user/add-user/add-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,

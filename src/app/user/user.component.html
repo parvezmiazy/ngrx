@@ -1,6 +1,7 @@
 <table class="table table-bordered">
     <thead>
         <tr>
+            <th>Serial</th>
             <th>Name</th>
             <th>Gender</th>
             <th>Company</th>
@@ -10,13 +11,14 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+        <tr *ngFor="let userInfo of users; let i=index">
+            <td>{{ i+1 }}</td>
+            <td>{{ userInfo.name}}</td>
+            <td>{{ userInfo.gender}}</td>
+            <td>{{ userInfo.company}}</td>
+            <td>{{ userInfo.email}}</td>
+            <td>{{ userInfo.age}}</td>
+            <td>{{ userInfo.status}}</td>
         </tr>
     </tbody>
 </table>

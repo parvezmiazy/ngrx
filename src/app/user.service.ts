@@ -14,11 +14,11 @@ export class UserService {
 
 
   getUsers():Observable<IUser[]>{
-    this.http.get<IUser[]>(this.apiUrl)
-    .pipe(
-          tap(data=>console.log('all:' + JSON.stringify(data))),
-          catchError(this.handleError)
-         );
+    return this.http.get<IUser[]>(this.apiUrl)
+      .pipe(
+        tap(data => console.log('all:' + JSON.stringify(data))),
+        catchError(this.handleError)
+      );
 }
 
   private handleError(err: HttpErrorResponse) {

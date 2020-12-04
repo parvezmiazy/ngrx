@@ -1,0 +1,14 @@
+
+{
+    "users": [
+      {     
+        "name":"abc",
+        "gender":"Male",
+        "company":"simec systems",
+        "email":"simec@gmail.com",
+        "age":26,
+        "status":1
+      }
+    ]
+
+}
