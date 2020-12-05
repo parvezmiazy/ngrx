@@ -1,15 +1,30 @@
-<div class="container">
+<h3>Edit User</h3>
 
-    <h3 class="text-center">Contact us</h3><br />
-    
-    <div class="row">
-      <div class="col-md-8">
-          <form action="/post" method="post">
-            <input class="form-control" name="name" placeholder="Name..." /><br />
-            <input class="form-control" name="phone" placeholder="Phone..." /><br />
-            <input class="form-control" name="email" placeholder="E-mail..." /><br />
-            <textarea class="form-control" name="text" placeholder="How can we help you?" style="height:150px;"></textarea><br />
-            <input class="btn btn-primary" type="submit" value="Send" /><br /><br />
-          </form>
-      </div>
-</div>      
+<form class="form-inline mb-4">
+  <form [formGroup]="userForm" (submit)="createUser()" class="form-inline mb-4">
+    <label class="sr-only" for="Name">Name</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" formControlName="name" placeholder="name">
+    </div>
+    <label class="sr-only" for="Name">Email</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" formControlName="email" placeholder="Email">
+    </div>
+
+    <label class="sr-only" for="Phone">Gender</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" formControlName="gender" placeholder="Gender">
+    </div>
+
+    <label class="sr-only" for="Address">Company</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="text" class="form-control" formControlName="company" placeholder="Company">
+    </div>
+
+    <label class="sr-only" for="membership">Age</label>
+    <div class="input-group mb-2 mr-sm-2">
+      <input type="number" class="form-control" formControlName="age" placeholder="Age">
+      
+    </div>
+    <button type="submit" class="btn btn-primary mb-2">Add User</button>
+  </form>

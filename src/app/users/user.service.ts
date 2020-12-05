@@ -9,7 +9,8 @@ import { User } from './user.model'
 })
 export class UserService {
 
-  private apiUrl = environment.apiUrl;
+  private apiUrl = "http://localhost:3000/users";
+
   constructor(private http: HttpClient) { }
 
 

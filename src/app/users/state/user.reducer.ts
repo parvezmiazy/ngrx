@@ -32,7 +32,7 @@ export const initialState = userAdapter.getInitialState(defaultUser);
 
 export function userReducer(
   state = initialState,
-  action: userActions.Action
+  action: userActions.Actions
 ): UserState {
   switch (action.type) {
     case userActions.UserActionTypes.LoadUsersSuccess: {

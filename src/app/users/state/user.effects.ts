@@ -58,7 +58,7 @@ export class UserEffects {
         (newUser: User) =>
           new userActions.CreateUserSuccess(newUser)
       ),
-         catchError(err=> of(new userActions.CreateUserFailure({err})))
+         catchError(err=> of(new userActions.CreateUserFailure(err)))
       )
     )
   );
@@ -85,7 +85,7 @@ export class UserEffects {
   );
 
   @Effect()
-  deleteUserr$: Observable<Action> = this.actions$.pipe(
+  deleteUser$: Observable<Action> = this.actions$.pipe(
     ofType<userActions.DeleteUser>(
       userActions.UserActionTypes.DeleteUser
     ),

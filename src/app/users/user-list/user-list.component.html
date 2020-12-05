@@ -1,3 +1,4 @@
+
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -12,11 +13,9 @@
         </tr>
     </thead>
     <tbody>
+   
     <tr>
-      <td colspan="7" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
-    </tr>
-    <tr>
-        <tr *ngFor="let userInfo of (users$ |async)">
+        <tr *ngFor="let userInfo of (users$ |async) let i=index;">
             <td>{{ i+1 }}</td>
             <td>{{ userInfo.name}}</td>
             <td>{{ userInfo.gender}}</td>
@@ -30,5 +29,8 @@
         <a (click)=deleteUser(userInfo)>delete</a>
       </td>
         </tr>
+        <tr>
+            <td colspan="8" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
+          </tr>
     </tbody>
 </table>

@@ -32,7 +32,7 @@ export class UserListComponent implements OnInit {
     }
   }
 
-  editUser(user: User) {
+  editUser(user:User) {
     this.store.dispatch(new UserActions.LoadUser(user.id));
   }
 

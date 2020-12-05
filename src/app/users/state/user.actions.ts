@@ -39,7 +39,7 @@ export class LoadUser implements Action {
 }
 
 export class LoadUserSuccess implements Action {
-  readonly type = UserActionTypes.LoadUsersSuccess;
+  readonly type = UserActionTypes.LoadUserSuccess;
   constructor(public payload: User) { }
 }
 
@@ -52,6 +52,7 @@ export class CreateUser implements Action {
   readonly type = UserActionTypes.CreateUser;
   constructor(public payload: User) { }
 }
+
 
 export class CreateUserSuccess implements Action {
   readonly type = UserActionTypes.CreateUserSuccess;
@@ -93,7 +94,7 @@ export class DeleteUserFailure implements Action {
   constructor(public payload: string ) { }
 }
 
-export type UserActions = 
+export type Actions = 
  LoadUsers |
  LoadUsersSuccess | 
  LoadUsersFailure |
