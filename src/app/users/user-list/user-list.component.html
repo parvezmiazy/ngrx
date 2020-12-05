@@ -8,10 +8,15 @@
             <th>Email</th>
             <th>Age</th>
             <th>Status</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let userInfo of users; let i=index">
+    <tr>
+      <td colspan="7" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
+    </tr>
+    <tr>
+        <tr *ngFor="let userInfo of (users$ |async)">
             <td>{{ i+1 }}</td>
             <td>{{ userInfo.name}}</td>
             <td>{{ userInfo.gender}}</td>
@@ -19,6 +24,11 @@
             <td>{{ userInfo.email}}</td>
             <td>{{ userInfo.age}}</td>
             <td>{{ userInfo.status}}</td>
+            <td>
+        <a (click)=editUser(userInfo)>edit</a>
+        <br>
+        <a (click)=deleteUser(userInfo)>delete</a>
+      </td>
         </tr>
     </tbody>
 </table>

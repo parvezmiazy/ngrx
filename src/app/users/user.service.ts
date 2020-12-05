@@ -3,7 +3,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { catchError,tap,map } from 'rxjs/operators';
-import { IUser } from './user/user'
+import { User } from './user.model'
 @Injectable({
   providedIn: 'root'
 })
@@ -13,12 +13,27 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
-  getUsers():Observable<IUser[]>{
-    return this.http.get<IUser[]>(this.apiUrl)
-      .pipe(
-        tap(data => console.log('all:' + JSON.stringify(data))),
-        catchError(this.handleError)
-      );
+getUsers(): Observable<User[]> {
+  return this.http.get<User[]>(this.apiUrl);
+}
+
+getUserById(payload: number): Observable<User> {
+  return this.http.get<User>(`${this.apiUrl}/${payload}`);
+}
+
+createUser(payload: User): Observable<User> {
+  return this.http.post<User>(this.apiUrl, payload);
+}
+
+updateUser(user: User): Observable<User> {
+  return this.http.patch<User>(
+    `${this.apiUrl}/${user.id}`,
+    user
+  );
+}
+
+deleteUser(payload: number) {
+  return this.http.delete(`${this.apiUrl}/${payload}`);
 }
 
   private handleError(err: HttpErrorResponse) {

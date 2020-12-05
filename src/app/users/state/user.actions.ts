@@ -1,6 +1,6 @@
-import { Update } from '@ngrx/entity/src/models';
+import { Update } from '@ngrx/entity';
 import { Action } from '@ngrx/store';
-import { IUser } from './user/user';
+import { User } from '../user.model';
 export enum UserActionTypes {
   LoadUsers = '[User] Load Users',
   LoadUsersSuccess = '[User] Load Users Success',
@@ -25,12 +25,12 @@ export class LoadUsers implements Action {
 
 export class LoadUsersSuccess implements Action {
   readonly type = UserActionTypes.LoadUsersSuccess;
-  constructor(public payload: { data: IUser[] }) { }
+  constructor(public payload: User[] ) { }
 }
 
 export class LoadUsersFailure implements Action {
   readonly type = UserActionTypes.LoadUsersFailure;
-  constructor(public payload: { error: string }) { }
+  constructor(public payload: string) { }
 }
 
 export class LoadUser implements Action {
@@ -40,42 +40,42 @@ export class LoadUser implements Action {
 
 export class LoadUserSuccess implements Action {
   readonly type = UserActionTypes.LoadUsersSuccess;
-  constructor(public payload: IUser) { }
+  constructor(public payload: User) { }
 }
 
 export class LoadUserFailure implements Action {
   readonly type = UserActionTypes.LoadUserFailure;
-  constructor(public payload: { error: string }) { }
+  constructor(public payload: string ) { }
 }
 
 export class CreateUser implements Action {
   readonly type = UserActionTypes.CreateUser;
-  constructor(public payload: IUser) { }
+  constructor(public payload: User) { }
 }
 
 export class CreateUserSuccess implements Action {
   readonly type = UserActionTypes.CreateUserSuccess;
-  constructor(public payload: IUser) { }
+  constructor(public payload: User) { }
 }
 
 export class CreateUserFailure implements Action {
   readonly type = UserActionTypes.CreateUserFailure;
-  constructor(public payload: { error: string }) { }
+  constructor(public payload:string ) { }
 }
 
 export class UpdateUser implements Action {
   readonly type = UserActionTypes.UpdateUser;
-  constructor(public payload: IUser) { }
+  constructor(public payload: User) { }
 }
 
 export class UpdateUserSuccess implements Action {
   readonly type = UserActionTypes.UpdateUserSuccess;
-  constructor(public payload: Update<IUser>) { }
+  constructor(public payload: Update<User>) { }
 }
 
 export class UpdateUserFailure implements Action {
   readonly type = UserActionTypes.UpdateUserFailure;
-  constructor(public payload: { error: string }) { }
+  constructor(public payload: string ) { }
 }
 
 export class DeleteUser implements Action {
@@ -90,7 +90,7 @@ export class DeleteUserSuccess implements Action {
 
 export class DeleteUserFailure implements Action {
   readonly type = UserActionTypes.DeleteUserFailure;
-  constructor(public payload: { error: string }) { }
+  constructor(public payload: string ) { }
 }
 
 export type UserActions = 
@@ -108,4 +108,4 @@ export type UserActions =
  UpdateUserFailure|
  DeleteUser| 
  DeleteUserSuccess|
- DeleteUserFailure 
+ DeleteUserFailure;

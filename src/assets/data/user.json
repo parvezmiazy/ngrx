@@ -8,6 +8,14 @@
         "email":"simec@gmail.com",
         "age":26,
         "status":1
+      },
+      {     
+        "name":"a",
+        "gender":"Female",
+        "company":"simec1 systems",
+        "email":"simec1@gmail.com",
+        "age":26,
+        "status":1
       }
     ]
 
