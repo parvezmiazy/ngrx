@@ -6,7 +6,7 @@
       "gender": "Male",
       "company": "simec systems",
       "email": "simec@gmail.com",
-      "age": 26
+      "age": 267
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "gender": "Female",
       "company": "simec2 systems",
       "email": "simec1@gmail.com",
-      "age": 26
+      "age": 266
     }
   ]
 }

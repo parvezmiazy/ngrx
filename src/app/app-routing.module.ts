@@ -7,8 +7,9 @@ import { HomeComponent } from './home/home.component';
 
 const appRoutes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'users',
-  loadChildren:"../app/users/users.module#UsersModule"},
+  {path:'users',loadChildren:"../app/users/users.module#UsersModule"},
+  {path:'customers',loadChildren:"../app/customers/customers.module#CustomersModule"},
+  
 ];
 
 @NgModule({
