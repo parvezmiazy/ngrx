@@ -11,33 +11,42 @@ import { User } from "../user.model";
 export class AddUserComponent implements OnInit {
 
   userForm: FormGroup;
+  submitted = false;
 
   constructor( private fb: FormBuilder,
     private store: Store<fromUser.AppState>) { }
 
   ngOnInit(){
     this.userForm = this.fb.group({
-      name: ["", Validators.required],
-      email: ["", Validators.required],
-      company: ["", Validators.required],
-      gender: ["", Validators.required],
-      age: ["", Validators.required],
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      company: ['', Validators.required],
+      gender: ['', Validators.required],
+      age: ['', [Validators.required, Validators.minLength(11)]]
     });
   }
-
+  get f() { return this.userForm.controls; }
   createUser() {
+    this.submitted = true;
+
+    if (this.userForm.invalid)
+    {
+      return;
+    }
+  else{
     const newUser: User = {
       name: this.userForm.get("name").value,
       email: this.userForm.get("email").value,
       company: this.userForm.get("company").value,
       gender: this.userForm.get("gender").value,
       age: this.userForm.get("age").value,
-      status: this.userForm.get("status").value
     };
 
     this.store.dispatch(new userActions.CreateUser(newUser));
 
-   // this.userForm.reset();
+    this.userForm.reset();
+    }
+ 
   }
 
 }

@@ -5,6 +5,6 @@ export interface User {
     company:string,
     email:string,
     age:number,
-    status:number
+    status?:number
 
 }

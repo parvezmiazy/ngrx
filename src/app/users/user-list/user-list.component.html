@@ -7,8 +7,7 @@
             <th>Gender</th>
             <th>Company</th>
             <th>Email</th>
-            <th>Age</th>
-            <th>Status</th>
+            <th>Mobile Number</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -22,15 +21,14 @@
             <td>{{ userInfo.company}}</td>
             <td>{{ userInfo.email}}</td>
             <td>{{ userInfo.age}}</td>
-            <td>{{ userInfo.status}}</td>
             <td>
-        <a (click)=editUser(userInfo)>edit</a>
+        <a (click)=editUser(userInfo) class="btn btn-sm btn-info">Edit</a>
         <br>
-        <a (click)=deleteUser(userInfo)>delete</a>
+        <a (click)=deleteUser(userInfo) class="btn btn-sm btn-danger">Delete</a>
       </td>
         </tr>
         <tr>
-            <td colspan="8" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
+            <td colspan="7" class="alert alert-danger" *ngIf="error$ | async as error">{{error}}</td>
           </tr>
     </tbody>
 </table>

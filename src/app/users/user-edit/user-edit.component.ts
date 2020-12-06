@@ -23,41 +23,44 @@ export class EditUserComponent implements OnInit {
       company: ["", Validators.required],
       gender: ["", Validators.required],
       age: ["", Validators.required],
+      id: null
     });
-  }
 
-  const user$: Observable<User> = this.store.select(
-    fromUser.getCurrentUser
-  )
+    const user$: Observable<User> = this.store.select(
+      fromUser.getCurrentUser
+    )
 
-  user$.subscribe(currentUser => {
-    if (currentUser) =>{
+    user$.subscribe(currentUser => {
+      if (currentUser) {
         this.userForm.patchValue({
-        name: currentUser.name,
-        email: currentUser.email,
-        company: currentUser.company,
-        gender: currentUser.gender,
-        age: currentUser.age,
-        id: currentUser.id
-      });
-    }
-  })
-}
+          name: currentUser.name,
+          email: currentUser.email,
+          company: currentUser.company,
+          gender: currentUser.gender,
+          age: currentUser.age,
+          id: currentUser.id
+        });
+      }
+    })
+  }
 
   updateUser() {
     const updatedUser: User = {
-      name: this.userForm.get("name").value;
+      name: this.userForm.get("name").value,
       email: this.userForm.get("email").value,
       company: this.userForm.get("company").value,
       gender: this.userForm.get("gender").value,
       age: this.userForm.get("age").value,
-      status: this.userForm.get("status").value,
       id: this.userForm.get("id").value
     };
 
     this.store.dispatch(new userActions.UpdateUser(updatedUser));
-
-    
+    this.userForm.reset();
   }
 
-}
+
+  }
+
+
+
+
