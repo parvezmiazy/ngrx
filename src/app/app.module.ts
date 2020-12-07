@@ -16,6 +16,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomersService } from './shared/customers.service';
 import { DepartmentService } from './shared/department.service';
+import { FlexLayoutModule } from '@angular/flex-layout/typings/module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +28,7 @@ import { DepartmentService } from './shared/department.service';
     MaterialModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     HttpClientModule,
