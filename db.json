@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "abc",
+      "gender": "Male",
+      "company": "simec systems",
+      "email": "simec@gmail.com",
+      "age": 267
+    },
+    {
+      "id": 2,
+      "name": "aaa",
+      "gender": "Female",
+      "company": "simec2 systems",
+      "email": "simec1@gmail.com",
+      "age": 266
+    }
+  ],
+  "departments": [
+    {
+      "id": 1,
+      "name": "Angular",
+      "description": "description"
+    },
+    {
+      "id": 2,
+      "name": "Node",
+      "description": "description"
+    },
+    {
+      "id": 3,
+      "name": "Php",
+      "description": "description"
+    },
+    {
+      "id": 4,
+      "name": "Wordpress",
+      "description": "description"
+    },
+    {
+      "id": 5,
+      "name": "Graphics",
+      "description": "description"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "fullName": "some comment",
+      "email": "some comment",
+      "mobile": "some comment",
+      "city": "some comment",
+      "gender": "male",
+      "department": "some comment",
+      "hireDate": "some comment",
+      "isPermanent": "some comment"
+    },
+    {
+      "id": 2,
+      "fullName": "Parvez",
+      "email": "some comment",
+      "mobile": "some comment",
+      "city": "some comment",
+      "gender": "male",
+      "department": "some comment",
+      "hireDate": "some comment",
+      "isPermanent": "some comment"
+    },
+    {
+      "id": 3,
+      "fullName": "Sabbir",
+      "email": "some comment",
+      "mobile": "some comment",
+      "city": "Dhaka",
+      "gender": "male",
+      "department": "Node",
+      "hireDate": "some comment",
+      "isPermanent": "some comment"
+    }
+  ]
+}
