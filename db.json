@@ -46,37 +46,13 @@
   ],
   "customers": [
     {
-      "id": 1,
-      "fullName": "some comment",
-      "email": "some comment",
-      "mobile": "some comment",
-      "city": "some comment",
-      "gender": "male",
-      "department": "some comment",
-      "hireDate": "some comment",
-      "isPermanent": "some comment"
-    },
-    {
       "id": 2,
       "fullName": "Parvez",
       "email": "some comment",
       "mobile": "some comment",
       "city": "some comment",
       "gender": "male",
-      "department": "some comment",
-      "hireDate": "some comment",
-      "isPermanent": "some comment"
-    },
-    {
-      "id": 3,
-      "fullName": "Sabbir",
-      "email": "some comment",
-      "mobile": "some comment",
-      "city": "Dhaka",
-      "gender": "male",
-      "department": "Node",
-      "hireDate": "some comment",
-      "isPermanent": "some comment"
+      "hireDate": "some comment"
     }
   ]
 }

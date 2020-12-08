@@ -5,12 +5,12 @@ import { EffectsModule, Actions } from "@ngrx/effects";
 import { StoreModule } from "@ngrx/store";
 import { customerReducer } from "./state/customer.reducer";
 import { CustomerEffects } from "./state/customer.effects";
-import { CustomerAddComponent } from './customer-add/customer-add.component';
 import { CustomerEditComponent } from './customer-edit/customer-edit.component';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { CustomerComponent } from './customer/customer.component';
+import { CustomerAddComponent } from './customer-add/customer-add.component';
 
 const customerRoutes: Routes = [
   {path:'',component:CustomerListComponent}
@@ -19,8 +19,8 @@ const customerRoutes: Routes = [
 @NgModule({
   declarations: [
     CustomerComponent,
-    CustomerAddComponent, 
     CustomerListComponent,
+    CustomerAddComponent,
     CustomerEditComponent],
   imports: [
     CommonModule,
@@ -31,6 +31,9 @@ const customerRoutes: Routes = [
     StoreModule.forFeature("customers", customerReducer),
     EffectsModule.forFeature([CustomerEffects])
   ],
+  entryComponents: [
+    CustomerAddComponent,
+    CustomerEditComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   exports: [CustomerListComponent]
 })

@@ -21,7 +21,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +34,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HttpClientModule,
     AppRoutingModule,
   ],
+ 
   
   providers: [CustomersService,DepartmentService,DatePipe],
   bootstrap: [AppComponent]

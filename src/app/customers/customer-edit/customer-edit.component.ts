@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatDialogRef } from '@angular/material';
+import { CustomersService } from '../../shared/customers.service';
 @Component({
   selector: 'app-customer-edit',
   templateUrl: './customer-edit.component.html',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerEditComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:CustomersService,public dialogRef: MatDialogRef<CustomerEditComponent>) { }
 
   ngOnInit(): void {
   }
-
+  onClose(){
+    this.dialogRef.close();
+  }
 }
