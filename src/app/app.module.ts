@@ -16,12 +16,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CustomersService } from './shared/customers.service';
 import { DepartmentService } from './shared/department.service';
-import { FlexLayoutModule } from '@angular/flex-layout/typings/module';
+import { FlexLayoutModule } from '@angular/flex-layout';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -34,6 +34,7 @@ import { FlexLayoutModule } from '@angular/flex-layout/typings/module';
     HttpClientModule,
     AppRoutingModule,
   ],
+ 
   
   providers: [CustomersService,DepartmentService,DatePipe],
   bootstrap: [AppComponent]

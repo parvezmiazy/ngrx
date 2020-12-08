@@ -41,7 +41,22 @@ export class CustomersService {
     });
   }
 
+  insertEmployee(customer) {
+    this.customer.push({
+      fullName: customer.fullName,
+      email: customer.email,
+      mobile: customer.mobile,
+      city: customer.city,
+      gender: customer.gender,
+      department: customer.department,
+      hireDate: customer.hireDate == "" ? "" : this.datePipe.transform(customer.hireDate, 'yyyy-MM-dd'),
+      isPermanent: customer.isPermanent
+    });
 
+
+    this.store.dispatch(new userActions.CreateUser(customer));
+  }
+    
 
 getCustomers(): Observable<Customer[]> {
   return this.http.get<Customer[]>(this.apiUrl);

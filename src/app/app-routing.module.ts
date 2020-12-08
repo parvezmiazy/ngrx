@@ -9,6 +9,7 @@ const appRoutes: Routes = [
   {path:'',component:HomeComponent},
   {path:'users',loadChildren:"../app/users/users.module#UsersModule"},
   {path:'customers',loadChildren:"../app/customers/customers.module#CustomersModule"},
+  {path:'departments',loadChildren:"../app/departments/departments.module#DepartmentsModule"},
   
 ];
 

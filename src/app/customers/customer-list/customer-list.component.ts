@@ -1,5 +1,6 @@
 import { Component, OnInit,ViewChild } from '@angular/core';
-import { MatTableDataSource,MatSort,MatPaginator } from '@angular/material';
+import { MatTableDataSource,MatSort,MatPaginator} from '@angular/material';
+import { MatDialog, MatDialogConfig } from '@angular/material';
 import { CustomersService } from '../../shared/customers.service';
 import { DepartmentService } from '../../shared/department.service';
 import { Store,select } from '@ngrx/store';
@@ -7,6 +8,8 @@ import { Observable } from "rxjs";
 import * as CustomerActions from '../state/customer.actions';
 import * as fromCustomer from "../state/customer.reducer";
 import { Customer } from '../customer.model'
+import { CustomerAddComponent } from '../customer-add/customer-add.component';
+import { CustomerEditComponent } from '../customer-edit/customer-edit.component';
 
 @Component({
   selector: 'app-customer-list',
@@ -17,7 +20,8 @@ export class CustomerListComponent implements OnInit {
   customers$: Observable<Customer[]>;
   error$: Observable<String>;
 
-  constructor(private store: Store<fromCustomer.AppState>,private service: CustomersService,
+
+  constructor( private dialog: MatDialog,private store: Store<fromCustomer.AppState>,private service: CustomersService,
      private departmentService: DepartmentService
     ) { } 
 
@@ -44,7 +48,14 @@ export class CustomerListComponent implements OnInit {
   
   }
 
+  addNew() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "50%";
+    let dialogRef = this.dialog.open(CustomerAddComponent, dialogConfig);
 
+  }
   applyFilter() {
     this.listData.filter = this.searchKey.trim().toLowerCase();
   }
@@ -63,10 +74,17 @@ export class CustomerListComponent implements OnInit {
   deleteCustomer(customer:Customer) {
     if (confirm("Are You Sure You want to Delete the Customer?")) {
       this.store.dispatch(new CustomerActions.DeleteCustomer(customer.id));
+
     }
   }
 
   editCustomer(customer:Customer) {
+   
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "50%";
+    let dialogRef = this.dialog.open(CustomerEditComponent, dialogConfig);
     this.store.dispatch(new CustomerActions.LoadCustomer(customer.id));
   }
 

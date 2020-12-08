@@ -1,16 +1,22 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { DepartmentComponent } from './department/department.component';
+import { DepartmentListComponent } from './department-list/department-list.component';
 
 
 const departmentRoutes: Routes = [
   {path:'',component:DepartmentComponent}
 ];
 @NgModule({
-  declarations: [DepartmentComponent],
+  declarations: [
+    DepartmentComponent,
+    DepartmentListComponent],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    RouterModule.forChild(departmentRoutes),
+  ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  exports: [DepartmentListComponent]
 })
 export class DepartmentsModule { }
