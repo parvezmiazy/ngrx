@@ -79,7 +79,6 @@ export class CustomerListComponent implements OnInit {
   }
 
   editCustomer(customer:Customer) {
-   
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;

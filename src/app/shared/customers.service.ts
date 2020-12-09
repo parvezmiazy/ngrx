@@ -15,49 +15,7 @@ export class CustomersService {
   
   }
 
-  form: FormGroup = new FormGroup({
-    $key: new FormControl(null),
-    fullName: new FormControl('', Validators.required),
-    email: new FormControl('', Validators.email),
-    mobile: new FormControl('', [Validators.required, Validators.minLength(8)]),
-    city: new FormControl(''),
-    gender: new FormControl('1'),
-    department: new FormControl(0),
-    hireDate: new FormControl(''),
-    isPermanent: new FormControl(false)
-  });
-
-  initializeFormGroup() {
-    this.form.setValue({
-      $key: null,
-      fullName: '',
-      email: '',
-      mobile: '',
-      city: '',
-      gender: '1',
-      department: 0,
-      hireDate: '',
-      isPermanent: false
-    });
-  }
-
-  insertEmployee(customer) {
-    this.customer.push({
-      fullName: customer.fullName,
-      email: customer.email,
-      mobile: customer.mobile,
-      city: customer.city,
-      gender: customer.gender,
-      department: customer.department,
-      hireDate: customer.hireDate == "" ? "" : this.datePipe.transform(customer.hireDate, 'yyyy-MM-dd'),
-      isPermanent: customer.isPermanent
-    });
-
-
-    this.store.dispatch(new userActions.CreateUser(customer));
-  }
-    
-
+  
 getCustomers(): Observable<Customer[]> {
   return this.http.get<Customer[]>(this.apiUrl);
 }

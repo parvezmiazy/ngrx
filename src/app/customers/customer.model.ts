@@ -5,7 +5,6 @@ export interface Customer {
     mobile:string;
     city:string;
     gender:string;
-    department:string;
     hireDate:string;
     isPermanent:string
 }
